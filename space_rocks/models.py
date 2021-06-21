@@ -1,5 +1,7 @@
 from pygame.math import Vector2
 
+from utils import load_sprite
+
 class GameObject:
     def __init__(self, position, sprite, velocity):
         self.position = Vector2(position)
@@ -17,3 +19,7 @@ class GameObject:
     def collides_with(self, other_obj):
         distance = self.position.distance_to(other_obj.position)
         return distance < self.radius + other_obj.radius
+
+class Spaceship(GameObject):
+    def __init__(self, position):
+        super().__init__(position, load_sprite("spaceship"), Vector2(0))
