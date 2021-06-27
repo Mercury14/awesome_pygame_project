@@ -17,7 +17,7 @@ class GameObject:
         blit_position = self.position - Vector2(self.radius)
         surface.blit(self.sprite, blit_position)
 
-    def move(self):
+    def move(self, surface):
         self.position = wrap_position(self.position + self.velocity, surface)
 
     def collides_with(self, other_obj):
