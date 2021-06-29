@@ -46,3 +46,7 @@ class Spaceship(GameObject):
     
     def accelerate(self):
         self.velocity += self.direction * self.ACCELERATION
+
+class Asteroid(GameObject):
+    def __init__(self, position):
+        super().__init__(position, load_sprite("asteroid"),(0, 0) )
